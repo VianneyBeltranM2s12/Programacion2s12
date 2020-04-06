@@ -1,0 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package provgbm005;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author GABRIELA
+ */
+public class ProVGBM005 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        int arreglo[], a, aux;
+
+
+
+        a = Integer.parseInt(JOptionPane.showInputDialog("Introduzca  numero del arreglo"));
+
+
+
+        arreglo = new int[a]; //Le asignamos el numero de elementos al arreglo
+
+
+
+        for (int i = 0; i < a; i++) {
+
+            System.out.print((i + 1) + ".Introduzca un numero ");
+
+            arreglo[i] = entrada.nextInt();
+
+        }
+        for (int i = 0; i < (a - 1); i++) {
+
+            for (int h = 0; h < (a - 1); h++) {
+
+                if (arreglo[h] > arreglo[h + 1]) {
+
+                    aux = arreglo[h];
+
+                    arreglo[h] = arreglo[h + 1];
+
+                    arreglo[h + 1] = aux;
+
+                }
+
+            }
+
+        }
+        System.out.print("\nArreglo menor a mayor: ");
+
+        for (int i = 0; i < a; i++) {
+
+            System.out.print(arreglo[i] + " - ");
+
+        }
+
+        System.out.print("\nArreglo mayor a menor: ");
+
+        for (int i = (a - 1); i >= 0; i--) {
+
+            System.out.print(arreglo[i] + " - ");
+
+        }
+
+        System.out.println("");
+
+        // TODO code application logic here
+    }
+    
+}
